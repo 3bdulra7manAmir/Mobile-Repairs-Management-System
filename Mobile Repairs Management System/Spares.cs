@@ -25,7 +25,11 @@ namespace Mobile_Repairs_Management_System
             PartsList.DataSource = Con.GetData(Query);
         }
 
-
+        private void Clear()
+        {
+            PartNameTb.Text = "";
+            PartCostTb.Text = "";
+        }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
 
