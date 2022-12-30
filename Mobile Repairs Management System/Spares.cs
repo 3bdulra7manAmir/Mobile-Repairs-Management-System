@@ -29,6 +29,7 @@ namespace Mobile_Repairs_Management_System
         {
             PartNameTb.Text = "";
             PartCostTb.Text = "";
+            Key = 0;
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
@@ -101,7 +102,7 @@ namespace Mobile_Repairs_Management_System
 
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
-            if (PartNameTb.Text == "" || PartCostTb.Text == "")
+            if (Key == 0)
             {
                 MessageBox.Show("Missing Data!!");
             }
