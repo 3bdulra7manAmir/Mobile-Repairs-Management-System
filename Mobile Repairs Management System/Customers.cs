@@ -39,9 +39,9 @@ namespace Mobile_Repairs_Management_System
                     string CName = CustNameTb.Text;
                     string CPhone = CustPhoneTb.Text;
                     string CAdd = CustAddTb.Text;
-                    string Query = "insert into CustomerTb1 values('{1}','{2}','{3}')";
+                    string Query = "insert into CustomerTb1 values('{0}','{1}','{2}')";
                     Query = string.Format(Query, CName, CPhone, CAdd);
-                    int i = Con.SetData(Query);
+                    Con.SetData(Query);
                     MessageBox.Show("Customer Added!");
                     ShowCustomers();
                 }
