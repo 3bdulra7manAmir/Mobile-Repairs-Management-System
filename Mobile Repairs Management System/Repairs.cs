@@ -45,7 +45,7 @@ namespace Mobile_Repairs_Management_System
                     string CPhone = PhoneTb.Text;
                     string DeviceName = DNameTb.Text;
                     string DeviceModel = ModelTb.Text;
-                    string Problem = Problem.Text;
+                    string Problem = ProblemTb.Text;
                     int Spare = Convert.ToInt32(PhoneTb.Text);
                     int Total = Convert.ToInt32(TotalTb.Text);
                     string Query = "insert into RepairTb1 values('{0}',{1},'{2}','{3}','{4}','{5}',{6},{7})";
