@@ -48,6 +48,7 @@ namespace Mobile_Repairs_Management_System
                     MessageBox.Show("Customer Added!");
                     ShowSpares();
                     Clear();
+
                 }
                 catch (Exception Ex)
                 {
