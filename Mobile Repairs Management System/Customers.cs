@@ -130,5 +130,26 @@ namespace Mobile_Repairs_Management_System
                 }
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Spares Obj = new Spares();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Repairs Obj = new Repairs();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }
