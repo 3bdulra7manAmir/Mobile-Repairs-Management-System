@@ -32,7 +32,28 @@ namespace Mobile_Repairs_Management_System
         }
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-
+            if (PartNameTb.Text == "" || PartCostTb.Text == "")
+            {
+                MessageBox.Show("MissingData!!");
+            }
+            else
+            {
+                try
+                {
+                    string PName = PartNameTb.Text;
+                    int Cost = Convert.ToInt32(PartCostTb.Text);
+                    string Query = "insert into SpareTb1 values('{0}',{1})";
+                    Query = string.Format(Query, PName, Cost);
+                    Con.SetData(Query);
+                    MessageBox.Show("Customer Added!");
+                    ShowSpares();
+                    Clear();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
         }
     }
 }
