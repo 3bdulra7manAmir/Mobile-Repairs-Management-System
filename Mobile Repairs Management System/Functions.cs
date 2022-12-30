@@ -33,5 +33,18 @@ namespace Mobile_Repairs_Management_System
             return dt;
         }
 
+        public int SetData(string Query)
+        {
+            int Cnt = 0;
+            if (Con.State == ConnectionState.Closed)
+            {
+                Con.Open();
+            }
+            Cmd.CommandText = Query;
+            Cnt = Cmd.ExecuteNonQuery();
+            Con.Close();
+            return Cnt;
+        }
+
     }
 }
