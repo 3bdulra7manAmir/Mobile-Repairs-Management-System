@@ -71,5 +71,32 @@ namespace Mobile_Repairs_Management_System
                 Key = Convert.ToInt32(PartsList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (PartNameTb.Text == "" || PartCostTb.Text == "")
+            {
+                MessageBox.Show("MissingData!!");
+            }
+            else
+            {
+                try
+                {
+                    string PName = PartNameTb.Text;
+                    int Cost = Convert.ToInt32(PartCostTb.Text);
+                    string Query = "Update SpareTb1 set SpName = '{0}',SpCost = {1} where SpCode = {2}";
+                    Query = string.Format(Query, PName, Cost,Key);
+                    Con.SetData(Query);
+                    MessageBox.Show("Customer Updated!");
+                    ShowSpares();
+                    Clear();
+
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
     }
 }
