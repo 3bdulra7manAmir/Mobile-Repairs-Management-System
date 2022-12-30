@@ -98,5 +98,32 @@ namespace Mobile_Repairs_Management_System
                 }
             }
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            if (PartNameTb.Text == "" || PartCostTb.Text == "")
+            {
+                MessageBox.Show("Missing Data!!");
+            }
+            else
+            {
+                try
+                {
+                    string PName = PartNameTb.Text;
+                    int Cost = Convert.ToInt32(PartCostTb.Text);
+                    string Query = "delete from SpareTb1 where SpCode = {0}";
+                    Query = string.Format(Query,Key);
+                    Con.SetData(Query);
+                    MessageBox.Show("Customer Deleted!");
+                    ShowSpares();
+                    Clear();
+
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
     }
 }
