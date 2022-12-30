@@ -19,6 +19,7 @@ namespace Mobile_Repairs_Management_System
             Con = new Functions();
             ShowRepairs();
             GetCustomer();
+            GetSpare();
         }
 
         private void GetCustomer()
@@ -27,6 +28,14 @@ namespace Mobile_Repairs_Management_System
             CustCb.DisplayMember = Con.GetData(Query).Columns["CustName"].ToString();
             CustCb.ValueMember = Con.GetData(Query).Columns["CustCode"].ToString();
             CustCb.DataSource = Con.GetData(Query);
+        }
+
+        private void GetSpare()
+        {
+            string Query = "Select * from SpareTb1";
+            SpareCb.DisplayMember = Con.GetData(Query).Columns["SpName"].ToString();
+            SpareCb.ValueMember = Con.GetData(Query).Columns["SpCost"].ToString();
+            SpareCb.DataSource = Con.GetData(Query);
         }
 
         private void Repairs_Load(object sender, EventArgs e)
