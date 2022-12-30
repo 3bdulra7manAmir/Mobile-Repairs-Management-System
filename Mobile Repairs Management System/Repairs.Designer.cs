@@ -56,12 +56,12 @@ namespace Mobile_Repairs_Management_System
             this.ModelTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.SpareCb = new System.Windows.Forms.TextBox();
             this.SpareCostTb = new System.Windows.Forms.TextBox();
             this.TotalTb = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.RepairsList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.SpareCb = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepairsList)).BeginInit();
@@ -277,14 +277,6 @@ namespace Mobile_Repairs_Management_System
             this.label8.TabIndex = 35;
             this.label8.Text = "Spare";
             // 
-            // SpareCb
-            // 
-            this.SpareCb.Font = new System.Drawing.Font("Trebuchet MS", 13F);
-            this.SpareCb.Location = new System.Drawing.Point(92, 541);
-            this.SpareCb.Name = "SpareCb";
-            this.SpareCb.Size = new System.Drawing.Size(240, 33);
-            this.SpareCb.TabIndex = 34;
-            // 
             // SpareCostTb
             // 
             this.SpareCostTb.Font = new System.Drawing.Font("Trebuchet MS", 13F);
@@ -371,19 +363,27 @@ namespace Mobile_Repairs_Management_System
             this.RepairsList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(203)))), ((int)(((byte)(66)))));
             this.RepairsList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // SpareCb
+            // 
+            this.SpareCb.FormattingEnabled = true;
+            this.SpareCb.Location = new System.Drawing.Point(92, 541);
+            this.SpareCb.Name = "SpareCb";
+            this.SpareCb.Size = new System.Drawing.Size(240, 34);
+            this.SpareCb.TabIndex = 41;
+            // 
             // Repairs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1260, 800);
+            this.Controls.Add(this.SpareCb);
             this.Controls.Add(this.RepairsList);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.TotalTb);
             this.Controls.Add(this.SpareCostTb);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.SpareCb);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.ModelTb);
@@ -446,7 +446,7 @@ namespace Mobile_Repairs_Management_System
         private System.Windows.Forms.TextBox TotalTb;
         private System.Windows.Forms.TextBox SpareCostTb;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox SpareCb;
         private Guna.UI2.WinForms.Guna2DataGridView RepairsList;
+        private System.Windows.Forms.ComboBox SpareCb;
     }
 }
