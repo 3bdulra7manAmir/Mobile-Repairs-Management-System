@@ -56,5 +56,20 @@ namespace Mobile_Repairs_Management_System
                 }
             }
         }
+
+        int Key = 0;
+        private void PartsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            PartNameTb.Text = PartsList.SelectedRows[0].Cells[1].Value.ToString();
+            PartCostTb.Text = PartsList.SelectedRows[0].Cells[2].Value.ToString();
+            if (PartNameTb.Text == "")
+            {
+                Key = 0;
+            }
+            else
+            {
+                Key = Convert.ToInt32(PartsList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
     }
 }
