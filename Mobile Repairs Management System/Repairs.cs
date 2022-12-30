@@ -22,6 +22,16 @@ namespace Mobile_Repairs_Management_System
             GetSpare();
         }
 
+        private void GetCost()
+        {
+            string Query = "select * from SpareTb1 where SpCode = {0}";
+            Query = string.Format(Query, SpareCb.SelectedValue.ToString());
+            foreach(DataRow dr in Con.GetData(Query).Rows)
+            {
+                SpareCostTb.Text = dr["SpCost"].ToString();
+            }
+        }
+
         private void GetCustomer()
         {
             string Query = "Select * from CustomerTb1";
@@ -34,7 +44,7 @@ namespace Mobile_Repairs_Management_System
         {
             string Query = "Select * from SpareTb1";
             SpareCb.DisplayMember = Con.GetData(Query).Columns["SpName"].ToString();
-            SpareCb.ValueMember = Con.GetData(Query).Columns["SpCost"].ToString();
+            SpareCb.ValueMember = Con.GetData(Query).Columns["SpCode"].ToString();
             SpareCb.DataSource = Con.GetData(Query);
         }
 
@@ -66,8 +76,9 @@ namespace Mobile_Repairs_Management_System
                     string Problem = ProblemTb.Text;
                     int Spare = Convert.ToInt32(PhoneTb.Text);
                     int Total = Convert.ToInt32(TotalTb.Text);
+                    int GrdTotal = Convert.ToInt32(SpareCostTb.Text) + Total;
                     string Query = "insert into RepairTb1 values('{0}',{1},'{2}','{3}','{4}','{5}',{6},{7})";
-                    Query = string.Format(Query, RDate, Customer, CPhone, DeviceName, DeviceModel, Problem, Spare, Total);
+                    Query = string.Format(Query, RDate, Customer, CPhone, DeviceName, DeviceModel, Problem, Spare, GrdTotal);
                     Con.SetData(Query);
                     MessageBox.Show("Repair Added!");
                     ShowRepairs();
@@ -79,6 +90,11 @@ namespace Mobile_Repairs_Management_System
                     MessageBox.Show(Ex.Message);
                 }
             }
+        }
+
+        private void SpareCb_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            GetCost();
         }
     }
 }
