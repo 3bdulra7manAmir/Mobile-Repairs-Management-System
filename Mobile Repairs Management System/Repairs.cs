@@ -126,7 +126,14 @@ namespace Mobile_Repairs_Management_System
         //int Key = 0;
         private void RepairsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            Key = Convert.ToInt32(RepairsList.SelectedRows[0].Cells[0].Value.ToString());
+        }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
         }
     }
 }
