@@ -67,5 +67,31 @@ namespace Mobile_Repairs_Management_System
                 Key = Convert.ToInt32(CustomersList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (CustNameTb.Text == "" || CustPhoneTb.Text == "" || CustAddTb.Text == "")
+            {
+                MessageBox.Show("MissingData!!");
+            }
+            else
+            {
+                try
+                {
+                    string CName = CustNameTb.Text;
+                    string CPhone = CustPhoneTb.Text;
+                    string CAdd = CustAddTb.Text;
+                    string Query = "Update CustomerTb1 set CustName = '{0}',CustPhone = '{1}',CustAdd = '{2}' where CustCode = {3}";
+                    Query = string.Format(Query, CName, CPhone, CAdd, Key);
+                    Con.SetData(Query);
+                    MessageBox.Show("Customer Updated!");
+                    ShowCustomers();
+                }
+                catch (Exception Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
+            }
+        }
     }
 }
