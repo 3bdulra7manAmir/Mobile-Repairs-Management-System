@@ -21,5 +21,23 @@ namespace Mobile_Repairs_Management_System
         {
             Application.Exit();
         }
+
+        private void SaveBtn_Click(object sender, EventArgs e)
+        {
+            if(UNameTb.Text == "" || PasswordTb.Text == "")
+            {
+                MessageBox.Show("MissingData!!");
+            }
+            else if(UNameTb.Text == "Admin" && PasswordTb.Text == "Admin")
+            {
+                Repairs Obj = new Repairs();
+                Obj.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Wrong Username or Password!!");
+            }
+        }
     }
 }
