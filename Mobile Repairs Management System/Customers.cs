@@ -94,6 +94,13 @@ namespace Mobile_Repairs_Management_System
             }
         }
 
+        private void Clear()
+        {
+            CustNameTb.Text = "";
+            CustPhoneTb.Text = "";
+            CustAddTb.Text = "";
+        }
+
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
             if (Key == 0)
