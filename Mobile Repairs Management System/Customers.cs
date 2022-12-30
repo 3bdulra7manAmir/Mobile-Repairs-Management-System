@@ -21,7 +21,7 @@ namespace Mobile_Repairs_Management_System
 
         private void ShowCustomers()
         {
-            string Query = "select * from CustomerTB1";
+            string Query = "select * from CustomerTb1";
             CustomersList.DataSource = Con.GetData(Query);
         }
 
