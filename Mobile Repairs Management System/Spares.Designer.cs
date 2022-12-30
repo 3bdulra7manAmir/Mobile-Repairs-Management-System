@@ -118,7 +118,7 @@ namespace Mobile_Repairs_Management_System
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 536);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 547);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -132,9 +132,9 @@ namespace Mobile_Repairs_Management_System
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(123)))), ((int)(((byte)(192)))));
-            this.panel3.Location = new System.Drawing.Point(358, 71);
+            this.panel3.Location = new System.Drawing.Point(350, 60);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 513);
+            this.panel3.Size = new System.Drawing.Size(5, 535);
             this.panel3.TabIndex = 26;
             // 
             // panel2
@@ -250,7 +250,7 @@ namespace Mobile_Repairs_Management_System
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Spares";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Spares";
