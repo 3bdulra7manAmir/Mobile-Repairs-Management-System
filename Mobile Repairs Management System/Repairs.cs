@@ -152,7 +152,9 @@ namespace Mobile_Repairs_Management_System
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-
+            Repairs Obj = new Repairs();
+            Obj.Show();
+            this.Hide();
         }
     }
 }
