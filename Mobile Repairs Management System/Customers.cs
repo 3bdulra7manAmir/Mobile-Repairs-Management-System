@@ -151,5 +151,12 @@ namespace Mobile_Repairs_Management_System
             Obj.Show();
             this.Hide();
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Customers Obj = new Customers();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }
